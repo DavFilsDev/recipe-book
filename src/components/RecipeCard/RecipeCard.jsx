@@ -31,10 +31,14 @@ export default function RecipeCard({ recipe, favorites, toggleFavorite }) {
             style={{
               backgroundColor: isFavorite ? 'blue' : 'white',
               color: isFavorite ? 'white' : 'black',
-              padding: '4px 8px',     // minimal size
-              fontSize: '12px',       // smaller text
+              padding: '4px 8px',
+              fontSize: '0.8rem',
+              fontWeight: '600',
               lineHeight: '1',
               border: '1px solid #ccc',
+              marginTop: '0.35rem',
+              borderRadius: '6px',
+              font: 'inherit',
               cursor: 'pointer'
             }}
           >
