@@ -40,11 +40,29 @@ export default function App() {
       <main className={styles.main}>
         <div>
           <h3>Favorites:</h3>
-          <ul>
-            {favorites.map((r) => (
-              <li key={r.id}>{r.name}</li>
-            ))}
-          </ul>
+
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(4, 1fr)',
+              gap: '10px'
+            }}
+          >
+            {orderedRecipes.map((r) => {
+              const isFavorite = favorites.some(f => f.id === r.id)
+
+              return (
+                <label key={r.id} style={{ display: 'flex', gap: '5px' }}>
+                  <input
+                    type="checkbox"
+                    checked={isFavorite}
+                    onChange={() => toggleFavorite(r)}
+                  />
+                  {r.id} - {r.name}
+                </label>
+              )
+            })}
+          </div>
         </div>
         <RecipeList
           recipes={orderedRecipes}

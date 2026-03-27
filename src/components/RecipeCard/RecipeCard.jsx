@@ -16,24 +16,31 @@ export default function RecipeCard({ recipe, favorites, toggleFavorite }) {
         <h2 className={styles.name}>{recipe.name}</h2>
         <span className={styles.badge}>{recipe.category}</span>
         <p className={styles.duration}>{recipe.duration} min</p>
-        <button
-          type="button"
-          className={styles.pin}
-          onClick={() => setPinned((p) => !p)}
-        >
-          {pinned ? 'Unpin' : 'Pin'}
-        </button>
-        <button
-          type="button"
-          onClick={() => toggleFavorite(recipe)}
-          style={{
-            backgroundColor: isFavorite ? 'blue' : 'white',
-            color: isFavorite ? 'white' : 'black',
-            marginLeft: '10px'
-          }}
-        >
-          Favorite
-        </button>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <button
+            type="button"
+            className={styles.pin}
+            onClick={() => setPinned((p) => !p)}
+          >
+            {pinned ? 'Unpin' : 'Pin'}
+          </button>
+
+          <button
+            type="button"
+            onClick={() => toggleFavorite(recipe)}
+            style={{
+              backgroundColor: isFavorite ? 'blue' : 'white',
+              color: isFavorite ? 'white' : 'black',
+              padding: '4px 8px',     // minimal size
+              fontSize: '12px',       // smaller text
+              lineHeight: '1',
+              border: '1px solid #ccc',
+              cursor: 'pointer'
+            }}
+          >
+            Favorite
+          </button>
+        </div>
       </div>
     </article>
   )

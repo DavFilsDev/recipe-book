@@ -15,7 +15,7 @@ export default function RecipeList({ recipes, favorites, toggleFavorite }) {
 
   return (
     <>
-      <div style={{ marginBottom: '20px' }}>
+      <div style={{ margin: '30px' }}>
         <input
           type="text"
           placeholder="Search recipe..."
