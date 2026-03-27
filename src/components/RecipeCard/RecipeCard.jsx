@@ -79,7 +79,7 @@ export default function RecipeCard({ recipe, favorites, toggleFavorite }) {
             onClick={(e) => e.stopPropagation()} 
             style={{
               background: 'white',
-              padding: '20px',
+              padding: '10px 30px',
               borderRadius: '10px',
               maxWidth: '500px',
               width: '90%'
