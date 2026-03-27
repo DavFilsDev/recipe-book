@@ -2,7 +2,7 @@ import { useState } from 'react'
 import RecipeCard from '../RecipeCard/RecipeCard.jsx'
 import styles from './RecipeList.module.css'
 
-export default function RecipeList({ recipes }) {
+export default function RecipeList({ recipes, favorites, toggleFavorite }) {
   const [search, setSearch] = useState('')
 
   const filteredRecipes = recipes.filter(recipe => {
@@ -27,7 +27,11 @@ export default function RecipeList({ recipes }) {
       <ul className={styles.list}>
         {filteredRecipes.map((recipe, index) => (
           <li key={index} className={styles.item}>
-            <RecipeCard recipe={recipe} />
+            <RecipeCard
+              recipe={recipe}
+              favorites={favorites} 
+              toggleFavorite={toggleFavorite}
+            />
           </li>
         ))}
       </ul>
