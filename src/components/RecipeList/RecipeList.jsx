@@ -15,7 +15,13 @@ export default function RecipeList({ recipes, favorites, toggleFavorite }) {
 
   return (
     <>
-      <div style={{ margin: '30px' }}>
+      <div
+        style={{
+          margin: '30px',
+          display: 'flex',
+          justifyContent: 'center'
+        }}
+      >
         <input
           type="text"
           placeholder="Search recipe..."
