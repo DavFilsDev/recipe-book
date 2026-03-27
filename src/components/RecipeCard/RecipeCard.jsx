@@ -85,7 +85,19 @@ export default function RecipeCard({ recipe, favorites, toggleFavorite }) {
               width: '90%'
             }}
           >
-            <h2>{recipe.name}</h2>
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center'
+              }}
+            >
+              <h2>{recipe.name}</h2>
+
+              <button onClick={() => setShowDetail(false)}>
+                X
+              </button>
+            </div>
             <p><strong>Category:</strong> {recipe.category}</p>
             <p><strong>Duration:</strong> {recipe.duration} min</p>
 
@@ -102,10 +114,6 @@ export default function RecipeCard({ recipe, favorites, toggleFavorite }) {
                 <li key={i}>{step}</li>
               ))}
             </ol>
-
-            <button onClick={() => setShowDetail(false)}>
-              Close
-            </button>
           </div>
         </div>
       )}
